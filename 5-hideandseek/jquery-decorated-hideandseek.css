@@ -1,0 +1,35 @@
+/* ************************************************************* HIDEANDSEEK */
+.has h2 {
+	background-color: #000000;
+	color: #ffffff;
+	line-height: 2em;
+}
+
+.has h2 span {
+	width: 18px;
+	height: 2em;
+	cursor: pointer;
+	float: left;
+}
+
+.has h2 span {
+	background-color: #ffaa00;
+}
+
+.has h2.hasMore span.hasHandleMore,.has h2.hasLess span.hasHandleLess {
+	display: none;
+}
+
+.has h2 span span {
+	display: block;
+	text-align: center;
+	color: #000000;
+}
+
+div.hasLess {
+	display: none;
+}
+
+div.hasMore {
+	display: block;
+}

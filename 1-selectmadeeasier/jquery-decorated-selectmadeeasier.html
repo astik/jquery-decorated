@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>jquery-selectmadeeasier</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="jquery-decorated-selectmadeeasier.css" />
+	<link type="text/css" rel="stylesheet" href="exemple/screen.css" />
+	<style type="text/css">
+		code{
+			white-space: pre;
+		}
+	</style>
+</head>
+<body>
+	<h1>Plugin selectmadeeasier</h1>
+	<form action="#" method="get">
+		<fieldset class="selectmadeeasier">
+			<legend>Transformed select box</legend>
+			<label for="mySelect">
+				Exemple 1 : explicit label
+			</label>
+			<select name="mySelect1" multiple="multiple" size="10" id="mySelect">
+				<option value="00">Option 1.00</option>
+				<option value="01">Option 1.01</option>
+				<option value="02" selected="selected">Option 1.02</option>
+				<option value="03">Option 1.03</option>
+				<option value="04">Option 1.04</option>
+				<option value="05">Option 1.05</option>
+				<option value="06">Option 1.06</option>
+				<option value="07">Option 1.07</option>
+				<option value="08">Option 1.08</option>
+				<option value="09" selected="selected">Option 1.09</option>
+				<option value="10" selected="selected">Option 1.10</option>
+				<option value="11" selected="selected">Option 1.11</option>
+				<option value="12">Option 1.12</option>
+				<option value="13">Option 1.13</option>
+				<option value="14">Option 1.14</option>
+				<option value="15">Option 1.15</option>
+				<option value="16">Option 1.16</option>
+				<option value="17">Option 1.17</option>
+				<option value="18">Option 1.18</option>
+				<option value="19">Option 1.19</option>
+				<option value="20">Option 1.20</option>
+				<option value="21">Option 1.21</option>
+				<option value="22">Option 1.22</option>
+				<option value="23" selected="selected">Option 1.23</option>
+				<option value="24" selected="selected">Option 1.24</option>
+				<option value="25" selected="selected">Option 1.25</option>
+				<option value="26">Option 1.26</option>
+				<option value="27">Option 1.27</option>
+				<option value="28">Option 1.28</option>
+				<option value="29">Option 1.29</option>
+			</select>
+			<code>
+				$("fieldset.selectmadeeasier label:eq(0)").selectmadeeasier();
+			</code>
+			<div class="myTheme">
+				<label>
+					<span>Exemple 2 : implicit label (with css)</span>
+					<select name="mySelect2" multiple="multiple" size="8">
+						<option value="00">Option 2.00</option>
+						<option value="01">Option 2.01</option>
+						<option value="02">Option 2.02</option>
+						<option value="03">Option 2.03</option>
+						<option value="04">Option 2.04</option>
+						<option value="05">Option 2.05</option>
+						<option value="06">Option 2.06</option>
+						<option value="07">Option 2.07</option>
+						<option value="08" selected="selected">Option 2.08</option>
+						<option value="09" selected="selected">Option 2.09</option>
+						<option value="10" selected="selected">Option 2.10</option>
+						<option value="11" selected="selected">Option 2.11</option>
+						<option value="12" selected="selected">Option 2.12</option>
+						<option value="13" selected="selected">Option 2.13</option>
+						<option value="14" selected="selected">Option 2.14</option>
+						<option value="15" selected="selected">Option 2.15</option>
+						<option value="16" selected="selected">Option 2.16</option>
+						<option value="17" selected="selected">Option 2.17</option>
+						<option value="18">Option 2.18</option>
+						<option value="19">Option 2.19</option>
+						<option value="20">Option 2.20</option>
+						<option value="21">Option 2.21</option>
+						<option value="22">Option 2.22</option>
+						<option value="23">Option 2.23</option>
+						<option value="24">Option 2.24</option>
+						<option value="25">Option 2.25</option>
+						<option value="26">Option 2.26</option>
+						<option value="27">Option 2.27</option>
+						<option value="28">Option 2.28</option>
+						<option value="29">Option 2.29</option>
+					</select>
+				</label>
+			</div>
+			<code>
+				$("fieldset.selectmadeeasier .myTheme label").selectmadeeasier({
+					enableSearch: false
+				});
+			</code>
+		</fieldset>
+		<fieldset>
+			<legend>Unchanged select box</legend>
+			<label for="mySelect3">
+				Exemple 3
+			</label>
+			<select name="mySelect3" multiple="multiple" size="10" id="mySelect3">
+				<option value="00">Option 00</option>
+				<option value="01">Option 01</option>
+				<option value="02" selected="selected">Option 02</option>
+				<option value="03">Option 03</option>
+				<option value="04">Option 04</option>
+				<option value="05">Option 05</option>
+				<option value="06">Option 06</option>
+				<option value="07">Option 07</option>
+				<option value="08">Option 08</option>
+				<option value="09" selected="selected">Option 09</option>
+				<option value="10" selected="selected">Option 10</option>
+				<option value="11" selected="selected">Option 11</option>
+				<option value="12">Option 12</option>
+				<option value="13">Option 13</option>
+				<option value="14">Option 14</option>
+				<option value="15">Option 15</option>
+				<option value="16">Option 16</option>
+				<option value="17">Option 17</option>
+				<option value="18">Option 18</option>
+				<option value="19">Option 19</option>
+				<option value="20">Option 20</option>
+				<option value="21">Option 21</option>
+				<option value="22">Option 22</option>
+				<option value="23" selected="selected">Option 23</option>
+				<option value="24" selected="selected">Option 24</option>
+				<option value="25" selected="selected">Option 25</option>
+				<option value="26">Option 26</option>
+				<option value="27">Option 27</option>
+				<option value="28">Option 28</option>
+				<option value="29">Option 29</option>
+			</select>
+			<label>
+				<span>Exemple 4</span>
+				<select name="mySelect4" multiple="multiple" size="8">
+					<option value="00">Option 00</option>
+					<option value="01">Option 01</option>
+					<option value="02">Option 02</option>
+					<option value="03">Option 03</option>
+					<option value="04">Option 04</option>
+					<option value="05">Option 05</option>
+					<option value="06">Option 06</option>
+					<option value="07">Option 07</option>
+					<option value="08" selected="selected">Option 08</option>
+					<option value="09" selected="selected">Option 09</option>
+					<option value="10" selected="selected">Option 10</option>
+					<option value="11" selected="selected">Option 11</option>
+					<option value="12" selected="selected">Option 12</option>
+					<option value="13" selected="selected">Option 13</option>
+					<option value="14" selected="selected">Option 14</option>
+					<option value="15" selected="selected">Option 15</option>
+					<option value="16" selected="selected">Option 16</option>
+					<option value="17" selected="selected">Option 17</option>
+					<option value="18">Option 18</option>
+					<option value="19">Option 19</option>
+					<option value="20">Option 20</option>
+					<option value="21">Option 21</option>
+					<option value="22">Option 22</option>
+					<option value="23">Option 23</option>
+					<option value="24">Option 24</option>
+					<option value="25">Option 25</option>
+					<option value="26">Option 26</option>
+					<option value="27">Option 27</option>
+					<option value="28">Option 28</option>
+					<option value="29">Option 29</option>
+				</select>
+			</label>
+		</fieldset>
+		<input type="reset" />
+		<input type="submit" />
+	</form>
+	<script type="text/javascript" src="../0-common/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery.decorated-selectmadeeasier.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$("fieldset.selectmadeeasier .myTheme label").selectmadeeasier({
+				enableSearch: false
+			});
+			$("fieldset.selectmadeeasier label:eq(0)").selectmadeeasier();
+		});
+	</script>
+</body>
+</html>

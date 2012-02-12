@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>jquery-confirmchange</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Plugin confirmchange</h1>
+	<p>
+		If you change value of one of these inputs, when you'll submit this form, you'll have to confirm with a dialog box.
+	</p>
+	<form action="#" method="get">
+		<label>
+			<span>Input 1 ?</span>
+			<input type="text" name="input1" value="blo" />
+		</label>
+		<label>
+			<span>Input 2 ?</span>
+			<input type="text" name="input2" value="bli" />
+		</label>
+		<label>
+			<span>Input 3 ?</span>
+			<input type="radio" name="input3" checked="checked" />
+		</label>
+		<label>
+			<span>Input 3b ?</span>
+			<input type="radio" name="input3" />
+		</label>
+		<label>
+			<span>Input 4 ?</span>
+			<input type="checkbox" name="input4" checked="checked" />
+		</label>
+		<label>
+			<span>Input 4b ?</span>
+			<input type="checkbox" name="input4b" />
+		</label>
+		<label>
+			<span>Input 5 ?</span>
+			<textarea name="input5">bla</textarea>
+		</label>
+		<label>
+			<span>Input 6 ?</span>
+			<select name="input6">
+				<option value="0">0</option>
+				<option value="1" selected="selected">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+		</label>
+		<label>
+			<span>Input 7 ?</span>
+			<select name="input7" multiple="multiple" size="7">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2" selected="selected">2</option>
+				<option value="3" selected="selected">3</option>
+				<option value="4" selected="selected">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+		</label>
+		<input type="reset" />
+		<input type="submit" />
+	</form>
+	<script type="text/javascript" src="../0-common/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery.decorated-confirmchange.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function(){
+			$("form").confirmchange({
+				selector: ":input"
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Decorated select box : doc</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+		h1, h2{
+			background-color: #000000;
+			color: #ffffff;
+			padding: 3px;
+		}
+		img{
+			padding: 5px;
+			border: 1px solid #000000;
+		}
+		code{
+			white-space: pre; 
+		}
+	</style>
+</head>
+<body>
+	<h1>Decorated select box : selectmadeeasier</h1>
+	<h2>Basics</h2>
+	<p>
+		This is a multiple select box :
+		<br />
+		<img src="select.jpg" alt="Basic select box" />
+	</p>
+	<p>
+		User can select several options by holding a meta-key when clicking a new option.
+		It is a common widget for user interaction on the Internet.
+	</p>
+	<p>
+		But it is a difficult widget to use. Forget holding the meta-key when selecting a new option and you will loose all your selection.
+		And there is no way to undo it.
+		And there isn't a confirmation dialog.
+	</p>
+	<h2>Morphing into primal</h2>
+	<p>
+		The idea is to make this multiple select box easier to use.
+		<br />
+		<img src="select_decorated.jpg" alt="Decorated select box" />
+	</p>
+	<p>
+		There is 3 part :
+	</p>
+	<ul>
+		<li>At the left : non selected options</li>
+		<li>At the center : action button</li>
+		<li>At the right : selected options (the ones that will be submitted</li>
+	</ul>
+	<p>
+		To interact with those options, there is 3 different ways :
+	</p>
+	<ul>
+		<li>Use the buttons to transfer all or a few options of any list to the other one</li>
+		<li>Double click on an option will transfer it to the other list</li>
+		<li>Arrow key (left and right) will transfer an option to the other list</li>
+	</ul>
+	<h2>Demo</h2>
+	You can see this in <a href="../jquery-decorated-selectmadeeasier.html">action</a>
+	<h2>Limitations / evolutions</h2>
+	<ul>
+		<li>Doesn't work well with jquery 1.2.6 ... i'm working on it</li>
+		<li>When an option change from a side to another, sort the destination list after the transfer has been made</li>
+		<li>If jQueryUI drag&drop is available, make it possible to drag an option to the other list. It has to be optional to reduce dependencies</li>
+	</ul>
+	<h2 id="options">Options</h2>
+	<ul>
+		<li>
+			<strong>size : (default -1)</strong>
+			if value is greater than 0, than it will be the size of the select box. If it's -1, the size define in html will be use
+		</li>
+		<li>
+			<strong>rtSearch : (default true)</strong>
+			true or false, to know if we display the text box to make selection in non-selected element easier
+		</li>
+		<li>
+			<strong>navByDblClick : (default true)</strong>
+			true or false, to know if we bind the (un)select action with double click element
+			! it seems that it isn't working on safari
+		</li>
+		<li>
+			<strong>navByArrows : (default true)</strong>
+			true or false, to know if we bind the (un)select action with arrow navigation (right or left) on element
+			! it seems that it isn't working on safari
+		</li>
+		<li>
+			<strong>navByButtons : (default true)</strong>
+			true or false, to know if we display and bind the (un)select action with buttons
+		</li>
+		<li>
+			<strong>lblCurrentElement : (default value of contained label)</strong>
+			Label for selected elements select box
+		</li>
+		<li>
+			<strong>lblSearch : (default "State a name or choose from list")</strong>
+			Label for unselected elements filter
+		</li>
+	</ul>
+	<h2>Configuration / Exemple</h2>
+	<p>
+		By default, the decoration will use configuration of the select box (size attribute, label, ...)
+		<br />
+		You can bypass this by defining specific options to the decoration.
+		The same way, you can de-activate some user interaction. 
+	</p>
+	<p>
+		Here is the code for a multiple select box :
+	</p>
+	<code>
+		&lt;div class="decorated" id="mySelectBox1"&gt;
+			&lt;label for="mySelect1"&gt;My select&lt;/label&gt;
+			&lt;select name="mySelect1" id="mySelect1" multiple="multiple" size="15"&gt;
+				&lt;option value="00"&gt;00&lt;/option&gt;
+				&lt;option value="01" selected="selected"&gt;01&lt;/option&gt;
+				&lt;option value="02"&gt;02&lt;/option&gt;
+				&lt;option value="03"&gt;03&lt;/option&gt;
+				&lt;option value="04" selected="selected"&gt;04&lt;/option&gt;
+				&lt;option value="05" selected="selected"&gt;05&lt;/option&gt;
+				&lt;option value="06"&gt;06&lt;/option&gt;
+				&lt;option value="07" selected="selected"&gt;07&lt;/option&gt;
+				&lt;option value="08" selected="selected"&gt;08&lt;/option&gt;
+				&lt;option value="09" selected="selected"&gt;09&lt;/option&gt;
+				&lt;option value="10"&gt;10&lt;/option&gt;
+				&lt;option value="11" selected="selected"&gt;11&lt;/option&gt;
+				&lt;option value="12"&gt;12&lt;/option&gt;
+				&lt;option value="13"&gt;13&lt;/option&gt;
+				&lt;option value="14" selected="selected"&gt;14&lt;/option&gt;
+				&lt;option value="15" selected="selected"&gt;15&lt;/option&gt;
+				&lt;option value="16"&gt;16&lt;/option&gt;
+				&lt;option value="17" selected="selected"&gt;17&lt;/option&gt;
+				&lt;option value="18" selected="selected"&gt;18&lt;/option&gt;
+				&lt;option value="19" selected="selected"&gt;19&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+	</code>
+	<p>
+		Here is the javascript code needed to decorate it :
+	</p>
+	<code>
+		&lt;script language="JavaScript" type="text/javascript"&gt;
+			$(document).ready(function(){
+				$("#mySelectBox1").selectmadeeasier();
+			});
+		&lt;/script&gt;
+	</code>
+	<p>
+		You can change some parameter by using an array in argument (the whole option list is available <a href="#options">above</a>). Here is we change the selected elements' label :
+	</p>
+	<code>
+		&lt;script language="JavaScript" type="text/javascript"&gt;
+			$(document).ready(function(){
+				$("#mySelectBox1").selectmadeeasier({
+					lblCurrentElement : "My new label for selected Roles"
+				});
+			});
+		&lt;/script&gt;
+	</code>
+</body>
+</html>

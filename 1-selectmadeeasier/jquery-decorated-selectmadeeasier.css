@@ -1,0 +1,40 @@
+.breaker {
+	clear: both;
+}
+
+.decoratedSelectBoxContainer1,.decoratedSelectBoxContainer2,.decoratedSelectBoxContainer3 {
+	float: left;
+}
+
+.decoratedSelectBoxContainer * {
+	display: block;
+	width: 100%;
+}
+
+.decoratedSelectBoxContainer2 * {
+	display: block;
+}
+
+.decoratedSelectBoxContainer1,.decoratedSelectBoxContainer3 {
+	width: 230px;
+}
+
+.decoratedSelectBoxContainer1 select,.decoratedSelectBoxContainer3 select {
+	width: 100%;
+}
+
+.decoratedSelectBoxContainer2 {
+	width: 50px;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.decoratedSelectBoxContainer {
+	margin-bottom: 20px;
+}
+
+.allGo2Right,.allGo2Left,.go2Right,.go2Left {
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 15px;
+}

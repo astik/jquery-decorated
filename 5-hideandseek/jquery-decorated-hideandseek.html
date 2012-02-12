@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>jquery-hideandseek</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="jquery-decorated-hideandseek.css" />
+</head>
+<body>
+	<h1>Plugin hideandseek</h1>
+	<div class="newsContainer active">
+		<h2>
+			Lorem ipsum title 1
+		</h2>
+		<div class="news">
+			Block 1
+		</div>
+	</div>
+	<div class="newsContainer">
+		<h2>
+			Lorem ipsum title 2
+		</h2>
+		<div class="news">
+			Block 2
+		</div>
+	</div>
+	<div class="newsContainer active">
+		<h2>
+			Lorem ipsum title 3
+		</h2>
+		<div class="news">
+			Block 3
+		</div>
+	</div>
+	<script type="text/javascript" src="../0-common/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery.decorated-hideandseek.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".newsContainer")
+				.hideandseek({
+					selectorTitle: "> h2",
+					selectorItem: "> div.news",
+					cssClassActive: "active"
+				})
+				.each(function(i){
+					$(this)
+						.bind("hideDone.hideandseek", function(){
+							alert("Hide block " + i);
+						})
+						.bind("showDone.hideandseek", function(){
+							alert("Show block " + i);
+						})
+					;
+				})
+			;
+		});
+	</script>
+</body>
+</html>

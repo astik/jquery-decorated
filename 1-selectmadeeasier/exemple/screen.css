@@ -1,0 +1,27 @@
+.myTheme .decoratedSelectBoxContainer2 a {
+	text-decoration: none;
+	height: 28px;
+	width: 18px;
+	margin: 5px;
+}
+
+.myTheme .decoratedSelectBoxContainer1 {
+	padding-top: 1.2em;
+}
+
+.myTheme .decoratedSelectBoxContainer2 {
+	width: auto;
+	margin-top: 20px;
+}
+
+.myTheme .go2Left {
+	background-image: url(toLeft.gif);
+}
+
+.myTheme .go2Right {
+	background-image: url(toRight.gif);
+}
+
+.myTheme .decoratedSelectBoxContainer2 span,.myTheme .allGo2Left,.myTheme .allGo2Right {
+	display: none;
+}
