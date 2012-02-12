@@ -15,10 +15,15 @@
  *
  * Configuration parameters are :
  * - cssClassMore : (default hasMore)
+ *		class added to set an article as shown
  * - cssClassLess : (default hasLess)
+ *		class added to set an article as hidden
  * - cssClassActive : (default hasActive)
+ *		class added to set an article as active, whi means shown at startup
  * - selectorTitle : (default div.hasTitle)
+ *		selector to get title container
  * - selectorItem : (default div.hasDetails)
+ *		selector to get detail container
  *
  * Triggers :
  * - hide.hideandseek :
