@@ -9,9 +9,9 @@
  */
 
 /**
- * The hideandseek() method transform a news item (title + details) by hiding the details.
- * When you click on the handle of the title, the details is shown, click again, and it disappear again.
- * It's, like an accordion, same same ... but different =)
+ * The hideandseek() method transforms a news item (title + details) by hiding the details.
+ * When you click on the handle of the title, the details is shown, click again, and it disappears again.
+ * It's like an accordion, same same ... but different =)
  *
  * Configuration parameters are :
  * - cssClassMore : (default hasMore)
@@ -60,13 +60,15 @@
 		};
 		$.extend(defaults, settings);
 
+		var manageHideOrShow = function(elem, class2remove, class2add, trigger){
+			$(defaults.selectorTitle + "," + defaults.selectorItem, elem).removeClass(class2remove).addClass(class2add);
+			$(elem).trigger(trigger);
+		};
 		var hasHide = function(){
-			$(defaults.selectorTitle + "," + defaults.selectorItem, this).removeClass(defaults.cssClassMore).addClass(defaults.cssClassLess);
-			$(this).trigger(triggers.hideDone);
+			manageHideOrShow(this, defaults.cssClassMore, defaults.cssClassLess, triggers.hideDone);
 		};
 		var hasShow = function(){
-			$(defaults.selectorTitle + "," + defaults.selectorItem, this).removeClass(defaults.cssClassLess).addClass(defaults.cssClassMore);
-			$(this).trigger(triggers.showDone);
+			manageHideOrShow(this, defaults.cssClassLess, defaults.cssClassMore, triggers.showDone);
 		};
 		var hasClick = function(event){
 		    var $tgt = $(event.target);

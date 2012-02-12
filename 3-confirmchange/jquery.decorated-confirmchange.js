@@ -30,7 +30,7 @@
 		var defaults =  {
 			selector: ":input",
 			confirmMsg: "Are you sure you want to submit the modification ?",
-			displayDialog: function(){
+			manageDialog: function(){
 				return confirm(defaults.confirmMsg);
 			}
 		};
@@ -43,7 +43,7 @@
 				|| inputs.filter("select").find("option").filter(function(){ return this.selected != this.defaultSelected; }).length > 0
 			;
 			if (changed){
-					return defaults.displayDialog();
+					return defaults.manageDialog();
 			}
 			return true;
 		});
