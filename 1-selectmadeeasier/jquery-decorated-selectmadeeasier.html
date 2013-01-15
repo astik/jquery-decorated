@@ -98,7 +98,7 @@ $("fieldset.selectmadeeasier .myTheme label").selectmadeeasier({
 			</code>
 			<div class="myTheme2">
 				<label>
-					<span>Exemple 3 : Use filtering custom function</span>
+					<span>Exemple 3 : Use custom filtering</span>
 					<select name="mySelect" multiple="multiple" size="8">
 						<option value="00">Option 2.00</option>
 						<option value="01">Option 2.01</option>
@@ -136,6 +136,7 @@ $("fieldset.selectmadeeasier .myTheme label").selectmadeeasier({
 			<label><input type="checkbox" id="checkboxOdd" />Filter only odd options</label><br />
 			<code>
 $("fieldset.selectmadeeasier .myTheme2 label").selectmadeeasier({
+	enableSearch: false,
 	filterPredicate: function(item) {
 		if ($('#checkboxOdd').is(':checked')) {
 			return $(item).val() % 2 == 0 ? true : false;
@@ -233,6 +234,7 @@ $("fieldset.selectmadeeasier .myTheme2 label").selectmadeeasier({
 
 			// Example of filtering available options using a predicate function
 			$("fieldset.selectmadeeasier .myTheme2 label").selectmadeeasier({
+				enableSearch: false,
 				filterPredicate: function(item) {
 					if ($('#checkboxOdd').is(':checked')) {
 						return $(item).val() % 2 == 0 ? true : false;
