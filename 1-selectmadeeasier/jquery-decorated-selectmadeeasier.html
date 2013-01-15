@@ -96,6 +96,55 @@ $("fieldset.selectmadeeasier .myTheme label").selectmadeeasier({
 	enableSearch: false
 });
 			</code>
+			<div class="myTheme2">
+				<label>
+					<span>Exemple 3 : Use filtering custom function</span>
+					<select name="mySelect" multiple="multiple" size="8">
+						<option value="00">Option 2.00</option>
+						<option value="01">Option 2.01</option>
+						<option value="02">Option 2.02</option>
+						<option value="03">Option 2.03</option>
+						<option value="04">Option 2.04</option>
+						<option value="05">Option 2.05</option>
+						<option value="06">Option 2.06</option>
+						<option value="07">Option 2.07</option>
+						<option value="08" selected="selected">Option 2.08</option>
+						<option value="09" selected="selected">Option 2.09</option>
+						<option value="10" selected="selected">Option 2.10</option>
+						<option value="11" selected="selected">Option 2.11</option>
+						<option value="12" selected="selected">Option 2.12</option>
+						<option value="13" selected="selected">Option 2.13</option>
+						<option value="14" selected="selected">Option 2.14</option>
+						<option value="15" selected="selected">Option 2.15</option>
+						<option value="16" selected="selected">Option 2.16</option>
+						<option value="17" selected="selected">Option 2.17</option>
+						<option value="18">Option 2.18</option>
+						<option value="19">Option 2.19</option>
+						<option value="20">Option 2.20</option>
+						<option value="21">Option 2.21</option>
+						<option value="22">Option 2.22</option>
+						<option value="23">Option 2.23</option>
+						<option value="24">Option 2.24</option>
+						<option value="25">Option 2.25</option>
+						<option value="26">Option 2.26</option>
+						<option value="27">Option 2.27</option>
+						<option value="28">Option 2.28</option>
+						<option value="29">Option 2.29</option>
+					</select>
+				</label>
+			</div>
+			<label><input type="checkbox" id="checkboxOdd" />Filter only odd options</label><br />
+			<code>
+$("fieldset.selectmadeeasier .myTheme2 label").selectmadeeasier({
+	filterPredicate: function(item) {
+		if ($('#checkboxOdd').is(':checked')) {
+			return $(item).val() % 2 == 0 ? true : false;
+		} else {
+			return true;
+		}
+	}
+});
+			</code>
 		</fieldset>
 		<fieldset>
 			<legend>Unchanged select box</legend>
@@ -181,6 +230,21 @@ $("fieldset.selectmadeeasier .myTheme label").selectmadeeasier({
 				enableSearch: false
 			});
 			$("fieldset.selectmadeeasier label:eq(0)").selectmadeeasier();
+
+			// Example of filtering available options using a predicate function
+			$("fieldset.selectmadeeasier .myTheme2 label").selectmadeeasier({
+				filterPredicate: function(item) {
+					if ($('#checkboxOdd').is(':checked')) {
+						return $(item).val() % 2 == 0 ? true : false;
+					} else {
+						return true;
+					}
+				}
+			});
+			$('#checkboxOdd').change(function() {
+				// When checkbox is checked or unchecked, the filter is triggered.
+				$("fieldset.selectmadeeasier .myTheme2 label").trigger('filter.selectmadeeasier');
+			});
 		});
 	</script>
 </body>
