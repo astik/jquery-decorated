@@ -82,6 +82,7 @@
 			caseSensitiveSearch: false,
 			lblCurrentElement: -1,
 			lblSearch: "State a name or choose from list",
+			filterPredicate: function(item){return true;},
 			createGo2Left: function(){
 				return $("<a href='#' class='go2Left'><span>&lt;-</span></a>");
 			},
@@ -179,6 +180,12 @@
 					cache.availableItems[i] = (cache.searchItems[i].indexOf(searchTxt) > -1) && !cache.selectedItems[i]
 				}
 				$container.trigger("update.selectmadeeasier");
+			},
+			filterAction: function(event, container, cache, predicate){
+				for (var i = 0 ; i < cache.items.length ; i++){
+					cache.availableItems[i] = predicate(cache.items[i]) && !cache.selectedItems[i]
+				}
+				container.trigger("update.selectmadeeasier");
 			},
 			moveItems: function($options, src, dst, cache){
 				var indexes = [];
@@ -387,6 +394,9 @@
 				})
 				.bind("search.selectmadeeasier", function(event){
 					myDefaults.searchAction(event, cache, myDefaults.caseSensitiveSearch);
+				})
+				.bind("filter.selectmadeeasier", function(event){
+					myDefaults.filterAction(event, container, cache, myDefaults.filterPredicate);
 				})
 				.bind("update.selectmadeeasier", function(event){
 					myDefaults.updateOptions(event, cache);
